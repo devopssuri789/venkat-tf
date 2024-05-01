@@ -1,0 +1,22 @@
+@Library('mySharedLibrary') _
+
+def pipelineTemplate = load 'pipelineTemplate.groovy'
+
+pipeline {
+    agent any
+
+    parameters {
+        choice(choices: ['App1', 'App2', 'App3', 'App4', 'App5', 'App6'], description: 'Select applications to build, test, and deploy', name: 'APPLICATIONS', multiSelect: true)
+    }
+
+    stages {
+        script {
+            def template = load 'template.yaml'
+
+            params.APPLICATIONS.each { selectedApp ->
+                def app = template.applications.find { it.name == selectedApp }
+                pipelineTemplate(app.name, app.checkout, app.credentialsId)
+            }
+        }
+    }
+}

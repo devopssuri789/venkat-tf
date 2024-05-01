@@ -1,0 +1,18 @@
+applications:
+  - name: "App1"
+    checkout: "https://your-gerrit-repo-url/App1.git"
+  
+  - name: "App2"
+    checkout: "https://your-gerrit-repo-url/App2.git"
+  
+  - name: "App3"
+    checkout: "https://your-gerrit-repo-url/App3.git"
+  
+  - name: "App4"
+    checkout: "https://your-gerrit-repo-url/App4.git"
+  
+  - name: "App5"
+    checkout: "https://your-gerrit-repo-url/App5.git"
+  
+  - name: "App6"
+    checkout: "https://your-gerrit-repo-url/App6.git"
